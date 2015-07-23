@@ -3,21 +3,11 @@ What is Sitecore Solr Search Term Highlighter?
 
 Demo project extending the Sitecore IQueriable to support search term highlighting in search results provided by Solr running on Sitecore.
 
+![Sitecore SignalR Tools](http://www.cmsbestpractices.com/wp-content/uploads/2015/07/sitecore-signalr-tools-logo.png)
+
 How to use Sitecore Solr Search Term Highlighter?
 -------------------------------------------------
 Please read the [Search Term Highlighting in Sitecore with Solr](http://www.cmsbestpractices.com/highlight-search-terms-using-contentsearch-sitecore-solr/) blog post on how to use the module.
-
-Example search query using the highlighter - 
-
-'
-using Sitecore.HighlightDemo.Solr; 
-...
-using (var context = index.CreateSearchContext(SearchSecurityOptions.DisableSecurityCheck))
-{
-var result = context.GetExtendedQueryable<SearchResultItem>().Where(it => it["definition"] == "panda").GetResultsWithHighlights("definition");
-var highlights = result.Highlights;
-}
-'
 
 
 Contributing

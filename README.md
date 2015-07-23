@@ -12,7 +12,7 @@ Please read the [Search Term Highlighting in Sitecore with Solr](http://www.cmsb
 
 Contributing
 ----------------------
-If you have have a contribution for this repository, please send a pull request.
+If you would like to contribute to this repository, please send a pull request.
 
 
 License

@@ -33,7 +33,7 @@ namespace Sitecore.HighlightDemo.Solr
             return (IQueryable<TItem>)args.Query;
         }
 
-        public static SearchResultsWithHighlights<T> GetResultsWithHighlights<T>(this IQueryable<T> source, string[] fieldNames, int surroundingcharacters = 20, int maxnumberofaccurencies = 5, string htmltag = "strong")
+        public static SearchResultsWithHighlights<T> GetResultsWithHighlights<T>(this IQueryable<T> source, string[] fieldNames, int surroundingcharacters = 20, int maxnumberofaccurencies = 5, string htmltag = "em")
         {
             Assert.ArgumentNotNull(source, "source");
 

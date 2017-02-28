@@ -34,7 +34,7 @@ namespace Sitecore.HighlightDemo.Solr
 
         private readonly IContentSearchConfigurationSettings contentSearchSettings;
 
-        private readonly ICorePipeline pipeline;
+        private readonly Sitecore.Abstractions.ICorePipeline pipeline;
 
         public LinqToSolrIndexExtended([NotNull]SolrSearchContext context, IExecutionContext executionContext)
             : this(context, new[] { executionContext })
@@ -204,15 +204,15 @@ namespace Sitecore.HighlightDemo.Solr
             : base(
                 new SolrIndexParameters(
                     context.Index.Configuration.IndexFieldStorageValueFormatter,
-                    context.Index.Configuration.VirtualFieldProcessors,
+                    context.Index.Configuration.VirtualFields,
                     context.Index.FieldNameTranslator,
-                    executionContexts))
+                    executionContexts[0]))
         {
             Assert.ArgumentNotNull(context, "context");
             this.context = context;
 
             contentSearchSettings = context.Index.Locator.GetInstance<IContentSearchConfigurationSettings>();
-            pipeline = context.Index.Locator.GetInstance<ICorePipeline>();
+            pipeline = context.Index.Locator.GetInstance<Sitecore.Abstractions.ICorePipeline>();
 
             var cultureExecutionContext = this.Parameters.ExecutionContexts.FirstOrDefault(c => c is CultureExecutionContext) as CultureExecutionContext;
 
@@ -481,9 +481,13 @@ namespace Sitecore.HighlightDemo.Solr
             var highlightOptions = new HighlightingParameters();
 
             highlightOptions.Fields = extQuery.HighlightParameters;
-
+            highlightOptions.Snippets = extQuery.Snippets;
+            highlightOptions.BeforeTerm = "<" + extQuery.Htmltag + ">";
+            highlightOptions.AfterTerm = "</" + extQuery.Htmltag + ">";
+            highlightOptions.Fragsize = extQuery.FragmentSize;
             options.Highlight = highlightOptions;
+            
         }
 
     }
-}
+} 

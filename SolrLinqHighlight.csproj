@@ -37,27 +37,27 @@
     </Reference>
     <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Abstractions.NoReferences.8.2.161115\lib\NET452\Sitecore.Abstractions.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.ContentSearch.NoReferences.8.2.161115\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.2.161115\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq.Solr, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.ContentSearch.Linq.Solr.NoReferences.8.2.161115\lib\NET452\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.SolrProvider, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.ContentSearch.SolrProvider.NoReferences.8.2.161115\lib\NET452\Sitecore.ContentSearch.SolrProvider.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.NoReferences.8.2.161115\lib\NET452\Sitecore.Kernel.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="SolrNet, Version=0.4.0.4001, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SolrNet.0.4.0.4001\lib\SolrNet.dll</HintPath>

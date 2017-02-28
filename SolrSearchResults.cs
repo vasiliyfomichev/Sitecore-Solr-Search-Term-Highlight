@@ -39,13 +39,13 @@ namespace Sitecore.HighlightDemo.Solr
             this.virtualFieldProcessors = virtualFieldProcessors;
             this.executionContexts = executionContexts;
             this.numberFound = searchResults.NumFound;
-            this.searchResults = ApplySecurity(searchResults, context.SecurityOptions, context.Index.Locator.GetInstance<ICorePipeline>(), context.Index.Locator.GetInstance<IAccessRight>(), ref this.numberFound);
+            this.searchResults = ApplySecurity(searchResults, context.SecurityOptions, context.Index.Locator.GetInstance<Sitecore.Abstractions.ICorePipeline>(), context.Index.Locator.GetInstance<Sitecore.Abstractions.IAccessRight>(), ref this.numberFound);
 
             var executionContext = this.executionContexts != null ? this.executionContexts.FirstOrDefault(c => c is OverrideExecutionContext<IIndexDocumentPropertyMapper<Dictionary<string, object>>>) as OverrideExecutionContext<IIndexDocumentPropertyMapper<Dictionary<string, object>>> : null;
             this.mapper = (executionContext != null ? executionContext.OverrideObject : null) ?? solrIndexConfiguration.IndexDocumentPropertyMapper;
         }
 
-        private static SolrQueryResults<Dictionary<string, object>> ApplySecurity(SolrQueryResults<Dictionary<string, object>> solrQueryResults, SearchSecurityOptions options, ICorePipeline pipeline, IAccessRight accessRight, ref int numberFound)
+        private static SolrQueryResults<Dictionary<string, object>> ApplySecurity(SolrQueryResults<Dictionary<string, object>> solrQueryResults, SearchSecurityOptions options, Sitecore.Abstractions.ICorePipeline pipeline, Sitecore.Abstractions.IAccessRight accessRight, ref int numberFound)
         {
             if (!options.HasFlag(SearchSecurityOptions.DisableSecurityCheck))
             {

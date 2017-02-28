@@ -29,7 +29,7 @@ namespace Sitecore.HighlightDemo.Solr
                 (index as IHasTraceWriter).TraceWriter = new LoggingTraceWriter(SearchLog.Log);
             }
             QueryGlobalFiltersArgs args = new QueryGlobalFiltersArgs(index.GetQueryable(), typeof(TItem), executionContexts.ToList<IExecutionContext>());
-            solrContext.Index.Locator.GetInstance<ICorePipeline>().Run("contentSearch.getGlobalLinqFilters", args);
+            solrContext.Index.Locator.GetInstance<Sitecore.Abstractions.ICorePipeline>().Run("contentSearch.getGlobalLinqFilters", args);
             return (IQueryable<TItem>)args.Query;
         }
 

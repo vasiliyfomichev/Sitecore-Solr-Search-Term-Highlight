@@ -14,5 +14,8 @@ namespace Sitecore.HighlightDemo.Solr
 
         // Can contain extra parameters. For the example, field names are stored only
         public string[] HighlightParameters { set; get; }
+        public int Snippets;
+        public string Htmltag;
+        public int FragmentSize; 
     }
 }

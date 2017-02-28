@@ -481,9 +481,13 @@ namespace Sitecore.HighlightDemo.Solr
             var highlightOptions = new HighlightingParameters();
 
             highlightOptions.Fields = extQuery.HighlightParameters;
-
+            highlightOptions.Snippets = extQuery.Snippets;
+            highlightOptions.BeforeTerm = "<" + extQuery.Htmltag + ">";
+            highlightOptions.AfterTerm = "</" + extQuery.Htmltag + ">";
+            highlightOptions.Fragsize = extQuery.FragmentSize;
             options.Highlight = highlightOptions;
+            
         }
 
     }
-}
+} 
